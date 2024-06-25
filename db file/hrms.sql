@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2024 at 12:16 PM
+-- Generation Time: Jun 25, 2024 at 11:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -24,38 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_customer`
+-- Table structure for table `tbl_users`
 --
 
-CREATE TABLE `tbl_customer` (
+CREATE TABLE `tbl_users` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
   `mobile` varchar(15) NOT NULL,
-  `address` text NOT NULL,
-  `city` varchar(50) NOT NULL,
-  `state` varchar(50) NOT NULL,
-  `status` enum('active','inactive') NOT NULL DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `password` varchar(255) NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `tbl_customer`
+-- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_customer` (`id`, `name`, `email`, `mobile`, `address`, `city`, `state`, `status`) VALUES
-(1, 'rachuru venkateswarlu', 'datasai006@gmail.com', '09550262808', 'ramalayam,12542', 'kurnool 1', 'Andhra Pradesh', 'inactive'),
-(2, 'venky', 'venky@gmail.com', '9177386765', 'ramalayam', 'kurnool', 'Andhra Pradesh', 'active'),
-(3, 'rachuru venkateswarlu', 'datasai006@gmail.com', '09550262808', 'ramalayam', 'kurnool', 'Andhra Pradesh', 'active'),
-(4, 'rachuru venkateswarlu', 'datasai006@gmail.com', '09550262808', 'ramalayam', 'kurnool', 'Andhra Pradesh', 'active');
+INSERT INTO `tbl_users` (`id`, `name`, `mobile`, `password`, `status`) VALUES
+(1, 'rachuru venkateswarlu', '9550262808', '$2y$10$FS.HraZAcK7pVFuOLAgKLeoHoRZ93ZsOeAAZP3j09qNz6l2aLqrF.', 'active'),
+(2, 'demo', '1112223330', '$2y$10$Jdy2bmYaUB93gaSQpNHMYegnqY7wTwqyeHY9w08jDtdObbRBlhVWC', 'active');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tbl_customer`
+-- Indexes for table `tbl_users`
 --
-ALTER TABLE `tbl_customer`
+ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -63,10 +58,10 @@ ALTER TABLE `tbl_customer`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_customer`
+-- AUTO_INCREMENT for table `tbl_users`
 --
-ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
