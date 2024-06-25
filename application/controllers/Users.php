@@ -22,7 +22,7 @@ class Users extends CI_Controller {
             'name' => $this->input->post('name'),
             'email' => $this->input->post('email'),
             'mobile' => $this->input->post('mobile'),
-            'address' => $this->input->post('address'),
+            // 'address' => $this->input->post('address'),
             'city' => $this->input->post('city'),
             'state' => $this->input->post('state'),
             'status' => 'active'

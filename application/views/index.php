@@ -13,17 +13,17 @@
     <div class="container mt-5">
         <nav class=" navbar navbar-expand-lg bg-body-tertiary ">
             <div class=" container-fluid">
-                <a class="navbar-brand text-dark" href="#">Navbar</a>
+                <a class="navbar-brand text-dark" href="#">HRMS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav text-dark ml-auto">
-                        <a class="nav-link text-dark " aria-current="page"
+                    <div class="navbar-nav  ml-auto">
+                        <a class="nav-link  " aria-current="page"
                             href="<?php echo site_url('users/create'); ?>">create</a>
-                        <a class="nav-link text-dark" href="<?php echo site_url('users/index'); ?>">view</a>
+                        <a class="nav-link " href="<?php echo site_url('users/index'); ?>">view</a>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile</th>
-                    <th>Address</th>
+                    <!-- <th>Address</th> -->
                     <th>City</th>
                     <th>State</th>
                     <!-- <th>Status</th> -->
@@ -54,7 +54,7 @@
                     <td><?php echo $user['name']; ?></td>
                     <td><?php echo $user['email']; ?></td>
                     <td><?php echo $user['mobile']; ?></td>
-                    <td><?php echo $user['address']; ?></td>
+                    <!-- <td><?php echo $user['address']; ?></td> -->
                     <td><?php echo $user['city']; ?></td>
                     <td><?php echo $user['state']; ?></td>
                     <!-- <td><?php echo $user['status']; ?></td> -->
