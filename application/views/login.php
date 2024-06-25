@@ -27,7 +27,7 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="<?=base_url('Auth/login')?>" method="post">
+                <form action="<?=base_url('Auth/login_user')?>" method="post">
                     <div class="input-group mb-3">
                         <input type="text" name="mobile" class="form-control" placeholder="mobile">
                         <div class="input-group-append">
@@ -67,7 +67,7 @@
                             <!-- /.col -->
                         </div>
                         <div class="col-5">
-                            <a href="<?=base_url('Registration')?>" style="color:blue">New
+                            <a href="<?=base_url('Auth/register')?>" style="color:blue">New
                                 Users</a>
                         </div>
                 </form>

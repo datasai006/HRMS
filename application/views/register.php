@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-body">
                         <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
-                        <form action="<?=base_url('Registration/process')?>" method="post">
+                        <form action="<?=base_url('Auth/register_user')?>" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" name="name" id="name" class="form-control"
@@ -53,11 +53,11 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="confirm_password" class="form-label">Confirm Password</label>
                                 <input type="password" name="confirm_password" id="confirm_password"
                                     class="form-control" required>
-                            </div>
+                            </div> -->
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Register</button>
                             </div>
