@@ -37,10 +37,31 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-
-
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"> </i>
+                        <p>
+                            Customer
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?=base_url()?>" class="nav-link">
+                                <i class=" nav-icon far fa-circle nav-icon"></i>
+                                <p>Add-Customer</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=base_url()?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View-Customer</p>
+                            </a>
+                        </li>
 
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-envelope"></i>
@@ -64,83 +85,100 @@
                         </li>
 
                     </ul>
-
-                    <ul>
-                    </ul>
-                    <!-- <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fa fa-user-circle"></i>
-                        <p>
-                            Department
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?=base_url('User_con/department')?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add-Department</p>
-                            </a>
-                        </li>
-                    </ul>
-
+                </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon "></i>
-                        <i class="fa fa-newspaper" aria-hidden="true"></i>
+                        <i class="nav-icon fa fa-users"> </i>
                         <p>
-                            News
-                            <i class="right fas fa-angle-left"></i>
+                            Projects
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url('Reset/enews')?>" class="nav-link">
+                            <a href="<?=base_url()?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>The Hindu</p>
+                                <p>Add-Project</p>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url('Reset/tnews')?>" class="nav-link">
+                            <a href="<?=base_url()?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Telugu News</p>
+                                <p>View-Project</p>
                             </a>
                         </li>
-                    </ul> -->
+
+                    </ul>
+                </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fa fa-cog"></i>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"> </i>
                         <p>
-                            Settings
-                            <i class="right fas fa-angle-left"></i>
+                            Vendors
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url('admin/dashboard/changePassword')?>" class="nav-link">
+                            <a href="<?=base_url()?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Change Password</p>
+                                <p>Add-Vendor</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=base_url()?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View-Vendor</p>
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"> </i>
+                        <p>
+                            Document
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url('Excel_con')?>" class="nav-link">
+                            <a href="<?=base_url()?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>import excel sheet</p>
+                                <p>Add-Document</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=base_url()?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View-Document</p>
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"> </i>
+                        <p>
+                            Compliance
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url('Reset/youtubee')?>" class="nav-link">
+                            <a href="<?=base_url()?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>youtube</p>
+                                <p>Add-Compliance</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=base_url()?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View-Compliance</p>
                             </a>
                         </li>
                     </ul>
+                </li>
         </nav>
         <!-- /.sidebar-menu -->
     </div>
