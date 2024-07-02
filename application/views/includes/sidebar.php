@@ -72,23 +72,23 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url()?>admin/dashboard/addemployee" class="nav-link">
+                            <a href="<?= base_url('employee/add') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add-Employee</p>
+                                <p>Add Employee</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=base_url()?>admin/Company/viewemployee" class="nav-link">
+                            <a href="<?= base_url('employee') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>View-Employee</p>
+                                <p>View Employees</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-users"> </i>
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
                             Projects
                             <i class="fas fa-angle-left right"></i>
@@ -96,20 +96,20 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url()?>" class="nav-link">
+                            <a href="<?= base_url('Project/add') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add-Project</p>
+                                <p>Add Project</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=base_url()?>" class="nav-link">
+                            <a href="<?= base_url('Project/index') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>View-Project</p>
+                                <p>View Projects</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"> </i>
@@ -120,19 +120,20 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?=base_url()?>" class="nav-link">
+                            <a href="<?=base_url('vendor/add')?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add-Vendor</p>
+                                <p>Add Vendor</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=base_url()?>" class="nav-link">
+                            <a href="<?=base_url('vendor')?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>View-Vendor</p>
+                                <p>View Vendors</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"> </i>
