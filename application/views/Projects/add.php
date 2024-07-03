@@ -52,10 +52,19 @@
                                             <option value="Others">Others</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <!-- <div class="form-group col-md-4">
                                         <label for="property_location">Property Location</label>
                                         <input type="text" class="form-control" id="property_location"
                                             name="property_location" required>
+                                    </div> -->
+                                    <div class="form-group col-md-4">
+                                        <label for="latitude">Latitude</label>
+                                        <input type="text" class="form-control" id="latitude" name="latitude" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="longitude">Longitude</label>
+                                        <input type="text" class="form-control" id="longitude" name="longitude"
+                                            required>
                                     </div>
                                     <!-- <div class="form-group col-md-4">
                                         <label for="property_location">Property Location</label>
@@ -99,6 +108,16 @@
 </div>
 
 <?php $this->load->view('includes/footer'); ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            document.getElementById('latitude').value = position.coords.latitude;
+            document.getElementById('longitude').value = position.coords.longitude;
+        });
+    }
+});
+</script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 <script>
 function initMap() {

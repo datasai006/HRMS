@@ -37,6 +37,8 @@
                             <p><strong>Project Name:</strong> <?= $project['project_name'] ?></p>
                             <p><strong>Project Type:</strong> <?= $project['project_type'] ?></p>
                             <p><strong>Project Location:</strong> <?= $project['property_location'] ?></p>
+                            <p><strong>latitude:</strong> <?= $project['latitude'] ?></p>
+                            <p><strong>longitude:</strong> <?= $project['longitude'] ?></p>
                             <p><strong>Property Address:</strong> <?= $project['property_address'] ?></p>
                             <p><strong>City:</strong> <?= $project['city'] ?></p>
                             <p><strong>State:</strong> <?= $project['state'] ?></p>

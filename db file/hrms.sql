@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2024 at 01:15 PM
+-- Generation Time: Jul 03, 2024 at 12:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -79,16 +79,19 @@ CREATE TABLE `projects` (
   `city` varchar(100) NOT NULL,
   `state` varchar(100) NOT NULL,
   `total_units` int(11) NOT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'active'
+  `status` varchar(255) NOT NULL DEFAULT 'active',
+  `latitude` decimal(10,8) DEFAULT NULL,
+  `longitude` decimal(11,8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`project_id`, `project_name`, `project_type`, `property_location`, `property_address`, `city`, `state`, `total_units`, `status`) VALUES
-(1, 'hiki', 'Villas', 'hyderbad', 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active'),
-(2, 'rlds', 'Individual', 'kurnool', 'ramalayam', 'kurnool', 'Andhra Pradesh', 500, 'inactive');
+INSERT INTO `projects` (`project_id`, `project_name`, `project_type`, `property_location`, `property_address`, `city`, `state`, `total_units`, `status`, `latitude`, `longitude`) VALUES
+(1, 'hiki', 'Villas', 'hyderbad', 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active', NULL, NULL),
+(2, 'rlds', 'Individual', 'kurnool', 'ramalayam', 'kurnool', 'Andhra Pradesh', 500, 'active', NULL, NULL),
+(3, 'car', 'Farmlands', NULL, 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active', 15.81383680, 78.05337600);
 
 -- --------------------------------------------------------
 
@@ -283,7 +286,8 @@ ALTER TABLE `leads`
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
-  ADD PRIMARY KEY (`project_id`);
+  ADD PRIMARY KEY (`project_id`),
+  ADD UNIQUE KEY `property_location` (`property_location`);
 
 --
 -- Indexes for table `tbl_amenities`
@@ -352,7 +356,7 @@ ALTER TABLE `leads`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_amenities`

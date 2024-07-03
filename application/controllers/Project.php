@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-// application/controllers/Project.php
 class Project extends CI_Controller {
 
     public function __construct() {
@@ -24,11 +23,13 @@ class Project extends CI_Controller {
     public function add() {
         $this->form_validation->set_rules('project_name', 'Project Name', 'trim|required');
         $this->form_validation->set_rules('project_type', 'Project Type', 'trim|required');
-         $this->form_validation->set_rules('property_location', 'property location', 'trim|required');
+        // $this->form_validation->set_rules('property_location', 'Property Location', 'trim|required');
         $this->form_validation->set_rules('property_address', 'Property Address', 'trim|required');
         $this->form_validation->set_rules('city', 'City', 'trim|required');
         $this->form_validation->set_rules('state', 'State', 'trim|required');
         $this->form_validation->set_rules('total_units', 'Total Units', 'trim|required|numeric');
+        $this->form_validation->set_rules('latitude', 'Latitude', 'trim|required|decimal');
+        $this->form_validation->set_rules('longitude', 'Longitude', 'trim|required|decimal');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('Projects/add');
@@ -36,14 +37,18 @@ class Project extends CI_Controller {
             $data = array(
                 'project_name' => $this->input->post('project_name'),
                 'project_type' => $this->input->post('project_type'),
-                'property_location' => $this->input->post('property_location'),
-                
+                // 'property_location' => $this->input->post('property_location'),
                 'property_address' => $this->input->post('property_address'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
                 'total_units' => $this->input->post('total_units'),
-                'status' => 'active' // default status
+                'latitude' => $this->input->post('latitude'),
+                'longitude' => $this->input->post('longitude'),
+                // 'status' => 'active' // default status
             );
+              echo '<pre>';
+            print_r($data);
+            echo '</pre>';
             $this->Project_model->add_project($data);
             redirect('project');
         }
@@ -54,11 +59,13 @@ class Project extends CI_Controller {
 
         $this->form_validation->set_rules('project_name', 'Project Name', 'trim|required');
         $this->form_validation->set_rules('project_type', 'Project Type', 'trim|required');
-         $this->form_validation->set_rules('property_location', 'property location', 'trim|required');
+        // $this->form_validation->set_rules('property_location', 'Property Location', 'trim|required');
         $this->form_validation->set_rules('property_address', 'Property Address', 'trim|required');
         $this->form_validation->set_rules('city', 'City', 'trim|required');
         $this->form_validation->set_rules('state', 'State', 'trim|required');
         $this->form_validation->set_rules('total_units', 'Total Units', 'trim|required|numeric');
+        $this->form_validation->set_rules('latitude', 'Latitude', 'trim|required|decimal');
+        $this->form_validation->set_rules('longitude', 'Longitude', 'trim|required|decimal');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('Projects/edit', $data);
@@ -66,12 +73,13 @@ class Project extends CI_Controller {
             $update_data = array(
                 'project_name' => $this->input->post('project_name'),
                 'project_type' => $this->input->post('project_type'),
-                 'property_location' => $this->input->post('property_location'),
+                // 'property_location' => $this->input->post('property_location'),
                 'property_address' => $this->input->post('property_address'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
                 'total_units' => $this->input->post('total_units'),
-                
+                'latitude' => $this->input->post('latitude'),
+                'longitude' => $this->input->post('longitude')
             );
             $this->Project_model->update_project($project_id, $update_data);
             redirect('project');
@@ -83,5 +91,4 @@ class Project extends CI_Controller {
         redirect('project');
     }
 }
-
 ?>

@@ -67,11 +67,21 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <!-- <div class="form-group col-md-4">
                                         <label for="property_location">Property location</label>
                                         <input type="text" class="form-control" id="property_location"
                                             name="property_location" value="<?= $project['property_location'] ?>"
                                             required>
+                                    </div> -->
+                                    <div class="form-group col-md-4">
+                                        <label for="latitude">Latitude</label>
+                                        <input type="text" class="form-control" id="latitude" name="latitude"
+                                            value="<?= $project['latitude'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="longitude">Longitude</label>
+                                        <input type="text" class="form-control" id="longitude" name="longitude"
+                                            value="<?= $project['longitude'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="property_address">Property Address</label>
