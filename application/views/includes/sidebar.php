@@ -109,6 +109,30 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>
+                            Leads
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('lead/add'); ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('lead'); ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Leads</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
