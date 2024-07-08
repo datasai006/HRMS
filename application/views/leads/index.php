@@ -23,12 +23,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
+                        <!-- <div class="card-header">
                             <h3 class="card-title">List of Leads</h3>
                             <a href="<?= base_url('lead/add'); ?>" class="btn btn-primary float-right">Add New Lead</a>
-                        </div>
+                        </div> -->
                         <div class="card-body">
-                            <table class="table table-bordered table-striped">
+                            <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>Lead ID</th>

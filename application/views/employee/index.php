@@ -50,7 +50,7 @@
         <div class="overflow"></div>
         <div class="p-3">
             <!-- <a href="<?php echo base_url('customers/create'); ?>" class="btn btn-primary">Add New Customer</a> -->
-            <table class="table table-bordered mt-3">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
