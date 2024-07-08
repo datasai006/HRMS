@@ -47,13 +47,10 @@
                         <td><?= $project['state'] ?></td>
                         <td><?= $project['total_units'] ?></td>
                         <td>
-                            <a href="<?= base_url('project/view/'.$project['project_id']) ?>"
-                                class="btn btn-info btn-sm">View</a>
-                            <a href="<?= base_url('project/edit/'.$project['project_id']) ?>"
-                                class="btn btn-primary btn-sm">Edit</a>
-                            <a href="<?= base_url('project/delete/'.$project['project_id']) ?>"
-                                class="btn btn-danger btn-sm"
-                                onclick="return confirm('Are you sure you want to delete this project?')">Delete</a>
+                            <a href="<?= base_url('project/view/'.$project['project_id']) ?>" class="fa fas fa-eye"></a>
+                            <a href="<?= base_url('project/edit/'.$project['project_id']) ?>" class="fa fas fa-pen"></a>
+                            <a href="<?= base_url('project/delete/'.$project['project_id']) ?>" class="fa fas fa-trash"
+                                onclick="return confirm('Are you sure you want to delete this project?')"></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

@@ -63,10 +63,10 @@
                                         <td><?= $customer['interested_property_type']; ?></td>
                                         <td>
                                             <a href="<?= site_url('customers/edit/'.$customer['id']); ?>"
-                                                class="btn btn-warning">Edit</a>
+                                                class="fa fas fa-pen"></a>
                                             <a href="<?= site_url('customers/delete/'.$customer['id']); ?>"
-                                                class="btn btn-danger"
-                                                onclick="return confirm('Are you sure you want to delete this customer?');">Delete</a>
+                                                class="fa fas fa-trash"
+                                                onclick="return confirm('Are you sure you want to delete this customer?');"></a>
                                         </td>
                                     </tr>
                                     <?php } ?>

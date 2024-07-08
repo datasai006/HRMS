@@ -50,12 +50,12 @@
                                         <td><?= $vendor['email'] ?></td>
                                         <td>
                                             <a href="<?= base_url('vendor/view/'.$vendor['vendor_id']) ?>"
-                                                class="btn btn-info">View</a>
+                                                class="fa fas fa-eye"></a>
                                             <a href="<?= base_url('vendor/edit/'.$vendor['vendor_id']) ?>"
-                                                class="btn btn-warning">Edit</a>
+                                                class="fa fas fa-pen"></a>
                                             <a href="<?= base_url('vendor/delete/'.$vendor['vendor_id']) ?>"
-                                                class="btn btn-danger"
-                                                onclick="return confirm('Are you sure you want to delete this vendor?');">Delete</a>
+                                                class="fa fas fa-trash"
+                                                onclick="return confirm('Are you sure you want to delete this vendor?');"></a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>

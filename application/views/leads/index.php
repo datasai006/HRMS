@@ -53,12 +53,12 @@
                                         <td><?= $lead['status'] ?></td>
                                         <td>
                                             <a href="<?= base_url('lead/view/'.$lead['lead_id']) ?>"
-                                                class="btn btn-info btn-sm">View</a>
+                                                class="fa fas fa-eye"></a>
                                             <a href="<?= base_url('lead/edit/'.$lead['lead_id']) ?>"
-                                                class="btn btn-warning btn-sm">Edit</a>
+                                                class="fa fas fa-pen"></a>
                                             <a href="<?= base_url('lead/delete/'.$lead['lead_id']) ?>"
-                                                class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Are you sure you want to delete this lead?')">Delete</a>
+                                                class="fa fas fa-trash"
+                                                onclick="return confirm('Are you sure you want to delete this lead?')"></a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
