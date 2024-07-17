@@ -34,9 +34,9 @@
                                         value="<?= $villa['plot_number'] ?>" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="area_size">Plot Size</label>
-                                    <input type="text" class="form-control" id="area_size"
-                                        value="<?= $villa['area_size'] ?>" disabled>
+                                    <label for="plot_size">Plot Size</label>
+                                    <input type="text" class="form-control" id="plot_size"
+                                        value="<?= $villa['plot_size'] ?>" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="area">Area(sft)</label>
@@ -67,6 +67,11 @@
                                     <label for="north_position">North Side</label>
                                     <input type="text" class="form-control" id="north_position"
                                         value="<?= $villa['north_position'] ?>" disabled>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="south_position">South Side</label>
+                                    <input type="text" class="form-control" id="south_position"
+                                        value="<?= $villa['south_position'] ?>" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="south_position">South Side</label>

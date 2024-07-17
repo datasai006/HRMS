@@ -64,10 +64,14 @@
                                     <div class="form-group col-md-4">
                                         <label for="status">Status</label>
                                         <select class="form-control" id="status" name="status" required>
-                                            <option value="active"
-                                                <?= $villa['status'] == 'active' ? 'selected' : '' ?>>Active</option>
-                                            <option value="inactive"
-                                                <?= $villa['status'] == 'inactive' ? 'selected' : '' ?>>Inactive
+                                            <option value="Available"
+                                                <?= $villa['status'] == 'Available' ? 'selected' : '' ?>>Available
+                                            </option>
+                                            <option value="Booked"
+                                                <?= $villa['status'] == 'Booked' ? 'selected' : '' ?>>Booked
+                                            </option>
+                                            <option value="Sold" <?= $villa['status'] == 'Sold' ? 'selected' : '' ?>>
+                                                Sold
                                             </option>
                                         </select>
                                     </div>

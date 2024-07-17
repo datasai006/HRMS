@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Villa_model extends CI_Model {
 
     public function get_all_villas() {
-        $this->db->where('status', 'active'); // Only get active villas
+        // $this->db->where('status', 'active'); // Only get active villas
         $query = $this->db->get('villas');
         return $query->result_array();
     }
