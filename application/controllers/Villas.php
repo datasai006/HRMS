@@ -17,7 +17,8 @@ class Villas extends CI_Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array(
                 'plot_number' => $this->input->post('plot_number'),
-                'area_size' => $this->input->post('area_size'),
+                'plot_size' => $this->input->post('plot_size'),
+                'area' => $this->input->post('area'),
                 'facing' => $this->input->post('facing'),
                 'status' => $this->input->post('status'),
                 'east_position' => $this->input->post('east_position'),
@@ -37,7 +38,8 @@ class Villas extends CI_Controller {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data = array(
             'plot_number' => $this->input->post('plot_number'),
-            'area_size' => $this->input->post('area_size'),
+            'plot_size' => $this->input->post('plot_size'),
+            'area' => $this->input->post('area'),
             'facing' => $this->input->post('facing'),
             'status' => $this->input->post('status'),
             'east_position' => $this->input->post('east_position'),

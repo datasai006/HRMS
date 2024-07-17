@@ -32,13 +32,14 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Plot Number</th>
-                                        <th>Area Size</th>
+                                        <th>Plot Size</th>
+                                        <th>Area(sft)</th>
                                         <th>Facing</th>
                                         <th>Status</th>
-                                        <th>East Position</th>
-                                        <th>West Position</th>
-                                        <th>North Position</th>
-                                        <th>South Position</th>
+                                        <th>East Side</th>
+                                        <th>West Side</th>
+                                        <th>North Side</th>
+                                        <th>South Side</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -47,7 +48,8 @@
                                     <tr>
                                         <td><?= $villa['id'] ?></td>
                                         <td><?= $villa['plot_number'] ?></td>
-                                        <td><?= $villa['area_size'] ?></td>
+                                        <td><?= $villa['plot_size'] ?></td>
+                                        <td><?= $villa['area'] ?></td>
                                         <td><?= ucfirst($villa['facing']) ?></td>
                                         <td><?= ucfirst($villa['status']) ?></td>
                                         <td><?= $villa['east_position'] ?></td>

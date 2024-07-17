@@ -39,9 +39,14 @@
                                             value="<?= $villa['plot_number'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="area_size">Area Size</label>
-                                        <input type="text" class="form-control" id="area_size" name="area_size"
-                                            value="<?= $villa['area_size'] ?>" required>
+                                        <label for="plot_size">Area Size</label>
+                                        <input type="text" class="form-control" id="plot_size" name="plot_size"
+                                            value="<?= $villa['plot_size'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="area">Area (sft)</label>
+                                        <input type="text" class="form-control" id="area" name="area"
+                                            value="<?= $villa['area'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="facing">Facing</label>
@@ -67,22 +72,22 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="east_position">East Position</label>
+                                        <label for="east_position">East Side</label>
                                         <input type="text" class="form-control" id="east_position" name="east_position"
                                             value="<?= $villa['east_position'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="west_position">West Position</label>
+                                        <label for="west_position">West Side</label>
                                         <input type="text" class="form-control" id="west_position" name="west_position"
                                             value="<?= $villa['west_position'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="north_position">North Position</label>
+                                        <label for="north_position">North Side</label>
                                         <input type="text" class="form-control" id="north_position"
                                             name="north_position" value="<?= $villa['north_position'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="south_position">South Position</label>
+                                        <label for="south_position">South Side</label>
                                         <input type="text" class="form-control" id="south_position"
                                             name="south_position" value="<?= $villa['south_position'] ?>" required>
                                     </div>
