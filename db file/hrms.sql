@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2024 at 12:06 PM
+-- Generation Time: Jul 17, 2024 at 01:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -64,6 +64,13 @@ CREATE TABLE `leads` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `leads`
+--
+
+INSERT INTO `leads` (`lead_id`, `project_id`, `lead_name`, `lead_number`, `lead_source`, `lead_email`, `lead_interest`, `lead_message`, `status`, `created_at`) VALUES
+(1, NULL, 'rlds', '1', 'online', 'datasai006@gmail.com', 'yes', 'i need a villa', 'pending', '2024-07-05 04:00:47');
+
 -- --------------------------------------------------------
 
 --
@@ -89,9 +96,10 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`project_id`, `project_name`, `project_type`, `property_location`, `property_address`, `city`, `state`, `total_units`, `status`, `latitude`, `longitude`) VALUES
-(1, 'hiki', 'Villas', 'hyderbad', 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active', NULL, NULL),
+(1, 'hiki', 'Villas', 'hyderbad', 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active', 15.81383680, 78.05133020),
 (2, 'rlds', 'Individual', 'kurnool', 'ramalayam', 'kurnool', 'Andhra Pradesh', 500, 'active', NULL, NULL),
-(3, 'car', 'Farmlands', NULL, 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active', 15.81383680, 78.05337600);
+(3, 'car', 'Farmlands', NULL, 'ramalayam', 'kurnool', 'Andhra Pradesh', 200, 'active', 15.81383680, 78.05337600),
+(4, 'car', 'Apartments', NULL, 'ramalayam', 'kurnool', 'Andhra Pradesh', 540, 'active', 17.44335710, 78.38221110);
 
 -- --------------------------------------------------------
 
@@ -264,6 +272,31 @@ CREATE TABLE `vendor` (
 INSERT INTO `vendor` (`vendor_id`, `project_id`, `vendor_name`, `commodity_type`, `units`, `address`, `city`, `state`, `zip_code`, `country`, `contact_person`, `phone_number`, `email`, `vendor_notes`, `contract_start_date`, `contract_end_date`, `status`, `created_at`) VALUES
 (1, NULL, 'venkateswarlu', 'Electrical Equipment', 'tons', 'ramalayam', 'hyderbad', 'Andhra Pradesh', '518002', 'india', 'rachuru venkateswarlu', '9550262808', 'datasai006@gmail.com', NULL, '2024-07-01', '2024-07-17', 'active', '2024-07-02 06:06:09');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `villas`
+--
+
+CREATE TABLE `villas` (
+  `id` int(11) NOT NULL,
+  `plot_number` varchar(255) NOT NULL,
+  `area_size` varchar(255) NOT NULL,
+  `facing` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `east_position` varchar(255) NOT NULL,
+  `west_position` varchar(255) NOT NULL,
+  `north_position` varchar(255) NOT NULL,
+  `south_position` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `villas`
+--
+
+INSERT INTO `villas` (`id`, `plot_number`, `area_size`, `facing`, `status`, `east_position`, `west_position`, `north_position`, `south_position`) VALUES
+(1, '1', '30*40', 'east', 'active', 'road', 'plot', 'plot', 'plot');
+
 --
 -- Indexes for dumped tables
 --
@@ -337,6 +370,12 @@ ALTER TABLE `vendor`
   ADD KEY `project_id` (`project_id`);
 
 --
+-- Indexes for table `villas`
+--
+ALTER TABLE `villas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -350,13 +389,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `leads`
 --
 ALTER TABLE `leads`
-  MODIFY `lead_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `lead_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_amenities`
@@ -399,6 +438,12 @@ ALTER TABLE `tbl_users`
 --
 ALTER TABLE `vendor`
   MODIFY `vendor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `villas`
+--
+ALTER TABLE `villas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

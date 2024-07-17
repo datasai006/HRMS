@@ -204,6 +204,29 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>
+                            Villas
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('villas/create'); ?>" class="nav-link">
+                                <i class="nav-icon far fa-circle nav-icon"></i>
+                                <p>Add Villa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('villas'); ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Villas</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
         </nav>
         <!-- /.sidebar-menu -->
     </div>
