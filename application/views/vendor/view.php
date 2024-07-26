@@ -23,18 +23,23 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Vendor Details</h3>
-                        </div>
                         <div class="card-body">
                             <p><strong>Vendor Name:</strong> <?= $vendor['vendor_name'] ?></p>
-                            <!-- Add other fields similarly -->
-                            <p><strong>Commodity Type:</strong> <?= $vendor['commodity_type'] ?></p>
                             <p><strong>Contact Person:</strong> <?= $vendor['contact_person'] ?></p>
-                            <p><strong>Phone Number:</strong> <?= $vendor['phone_number'] ?></p>
+                            <p><strong>Contact Number:</strong> <?= $vendor['contact_number'] ?></p>
                             <p><strong>Email:</strong> <?= $vendor['email'] ?></p>
-                            <p><strong>Zip code:</strong> <?= $vendor['zip_code'] ?></p>
-                            <!-- Add remaining fields as per your table structure -->
+                            <p><strong>Address:</strong> <?= $vendor['address'] ?></p>
+                            <p><strong>City:</strong> <?= $vendor['city'] ?></p>
+                            <p><strong>State:</strong> <?= $vendor['state'] ?></p>
+                            <p><strong>Zip Code:</strong> <?= $vendor['zip_code'] ?></p>
+                            <p><strong>Country:</strong> <?= $vendor['country'] ?></p>
+                            <p><strong>GST Number:</strong> <?= $vendor['gst_number'] ?></p>
+                            <p><strong>Contract Start Date:</strong> <?= $vendor['contract_start_date'] ?></p>
+                            <p><strong>Contract End Date:</strong> <?= $vendor['contract_end_date'] ?></p>
+                            <p><strong>Status:</strong> <?= $vendor['status'] ?></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="<?= base_url('vendor') ?>" class="btn btn-secondary">Back to List</a>
                         </div>
                     </div>
                 </div>

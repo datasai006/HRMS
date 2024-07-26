@@ -26,9 +26,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">
-                        <div class="card-header">
+                        <!-- <div class="card-header">
                             <h3 class="card-title">Edit Vendor</h3>
-                        </div>
+                        </div> -->
                         <!-- form start -->
                         <form action="<?= base_url('vendor/update/'.$vendor['vendor_id']) ?>" method="post">
                             <div class="card-body">
@@ -77,6 +77,16 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
+                                        <label for="credit_limit">Credit Limit</label>
+                                        <input type="text" class="form-control" id="credit_limit" name="credit_limit"
+                                            value="<?= $vendor['credit_limit'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="credit_cycle">Credit Cycle</label>
+                                        <input type="text" class="form-control" id="credit_cycle" name="credit_cycle"
+                                            value="<?= $vendor['credit_cycle'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
                                         <label for="contact_person">Contact Person</label>
                                         <input type="text" class="form-control" id="contact_person"
                                             name="contact_person" value="<?= $vendor['contact_person'] ?>" required>
@@ -90,6 +100,26 @@
                                         <label for="email">Email</label>
                                         <input type="email" class="form-control" id="email" name="email"
                                             value="<?= $vendor['email'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="gst_number">GST Number</label>
+                                        <input type="text" class="form-control" id="gst_number" name="gst_number"
+                                            value="<?= $vendor['gst_number'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="pan_number">Pan Number</label>
+                                        <input type="text" class="form-control" id="pan_number" name="pan_number"
+                                            value="<?= $vendor['pan_number'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="bank_number">Bank Account Number</label>
+                                        <input type="text" class="form-control" id="bank_number" name="bank_number"
+                                            value="<?= $vendor['bank_number'] ?>" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="ifsc_code">IFSC CODE</label>
+                                        <input type="text" class="form-control" id="ifsc_code" name="ifsc_code"
+                                            value="<?= $vendor['ifsc_code'] ?>" required>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="address">Address</label>

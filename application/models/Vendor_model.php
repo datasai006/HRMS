@@ -7,29 +7,29 @@ class Vendor_model extends CI_Model {
 
       public function get_all_vendors() {
         $this->db->where('status', 'active'); 
-        $query = $this->db->get('Vendor');
+        $query = $this->db->get(' tbl_vendors');
         return $query->result_array();
     }
 
     public function get_vendor($id) {
-        $query = $this->db->get_where('Vendor', array('vendor_id' => $id));
+        $query = $this->db->get_where(' tbl_vendors', array('id' => $id));
         return $query->row_array();
     }
 
     public function add_vendor($data) {
-        return $this->db->insert('Vendor', $data);
+        return $this->db->insert(' tbl_vendors', $data);
     }
 
     public function update_vendor($id, $data) {
-        $this->db->where('vendor_id', $id);
-        return $this->db->update('Vendor', $data);
+        $this->db->where('id', $id);
+        return $this->db->update(' tbl_vendors', $data);
     }
 
     public function delete_vendor($id) {
-        $this->db->where('vendor_id', $id);
+        $this->db->where('id', $id);
         $update_data = array(
             'status' => 'inactive' 
         );
-        return $this->db->update('Vendor', $update_data);
+        return $this->db->update(' tbl_vendors', $update_data);
     }
 }

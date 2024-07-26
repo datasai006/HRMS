@@ -157,7 +157,98 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-file-invoice-dollar"></i>
+                        <p>
+                            Purchase Orders
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('PurchaseOrders/add') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Purchase Order</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('PurchaseOrders') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Purchase Orders</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-box"></i>
+                        <p>
+                            PO Items
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('PoItems/create') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add PO Item</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('PoItems') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View PO Items</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-file-invoice"></i>
+                        <p>
+                            Invoices
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('Invoices/create') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Invoice</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('Invoices') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Invoices</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-money-bill-wave"></i>
+                        <p>
+                            Invoice Payments
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('InvoicePayments/create') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Invoice Payment</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('InvoicePayments') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Invoice Payments</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"> </i>

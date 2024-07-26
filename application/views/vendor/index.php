@@ -32,28 +32,32 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Vendor Name</th>
-                                        <th>Commodity Type</th>
                                         <th>Contact Person</th>
-                                        <th>Phone Number</th>
+                                        <th>Contact Number</th>
                                         <th>Email</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Country</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($vendors as $vendor): ?>
                                     <tr>
-                                        <td><?= $vendor['vendor_id'] ?></td>
+                                        <td><?= $vendor['id'] ?></td>
                                         <td><?= $vendor['vendor_name'] ?></td>
-                                        <td><?= $vendor['commodity_type'] ?></td>
                                         <td><?= $vendor['contact_person'] ?></td>
-                                        <td><?= $vendor['phone_number'] ?></td>
+                                        <td><?= $vendor['contact_number'] ?></td>
                                         <td><?= $vendor['email'] ?></td>
+                                        <td><?= $vendor['city'] ?></td>
+                                        <td><?= $vendor['state'] ?></td>
+                                        <td><?= $vendor['country'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('vendor/view/'.$vendor['vendor_id']) ?>"
+                                            <a href="<?= base_url('vendor/view/'.$vendor['id']) ?>"
                                                 class="fa fas fa-eye"></a>
-                                            <a href="<?= base_url('vendor/edit/'.$vendor['vendor_id']) ?>"
+                                            <a href="<?= base_url('vendor/edit/'.$vendor['id']) ?>"
                                                 class="fa fas fa-pen"></a>
-                                            <a href="<?= base_url('vendor/delete/'.$vendor['vendor_id']) ?>"
+                                            <a href="<?= base_url('vendor/delete/'.$vendor['id']) ?>"
                                                 class="fa fas fa-trash"
                                                 onclick="return confirm('Are you sure you want to delete this vendor?');"></a>
                                         </td>

@@ -21,17 +21,16 @@ class Vendor extends CI_Controller {
     }
 
     public function add() {
-        $this->form_validation->set_rules('vendor_name', 'Vendor Name', 'trim|required');
-        $this->form_validation->set_rules('commodity_type', 'Commodity Type', 'trim|required');
-         $this->form_validation->set_rules('units', 'units', 'trim|required');
+          $this->form_validation->set_rules('vendor_name', 'Vendor Name', 'trim|required');
         $this->form_validation->set_rules('contact_person', 'Contact Person', 'trim|required');
-        $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required');
+        $this->form_validation->set_rules('contact_number', 'Contact Number', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('address', 'Address', 'trim|required');
         $this->form_validation->set_rules('city', 'City', 'trim|required');
         $this->form_validation->set_rules('state', 'State', 'trim|required');
         $this->form_validation->set_rules('zip_code', 'Zip Code', 'trim|required');
-         $this->form_validation->set_rules('country', 'country', 'trim|required');
+        $this->form_validation->set_rules('country', 'Country', 'trim|required');
+        $this->form_validation->set_rules('gst_number', 'GST Number', 'trim|required');
         $this->form_validation->set_rules('contract_start_date', 'Contract Start Date', 'trim|required');
         $this->form_validation->set_rules('contract_end_date', 'Contract End Date', 'trim|required');
 
@@ -40,19 +39,16 @@ class Vendor extends CI_Controller {
             $this->load->view('vendor/add');
         } else {
             $data = array(
-                'project_id' => $this->input->post('project_id'),
-                'vendor_name' => $this->input->post('vendor_name'),
-                'commodity_type' => $this->input->post('commodity_type'),
-                'units' => $this->input->post('units'),
+                 'vendor_name' => $this->input->post('vendor_name'),
+                'contact_person' => $this->input->post('contact_person'),
+                'contact_number' => $this->input->post('contact_number'),
+                'email' => $this->input->post('email'),
                 'address' => $this->input->post('address'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
                 'zip_code' => $this->input->post('zip_code'),
-                 'country' => $this->input->post('country'),
-                'contact_person' => $this->input->post('contact_person'),
-                'phone_number' => $this->input->post('phone_number'),
-                'email' => $this->input->post('email'),
-                'vendor_notes' => $this->input->post('vendor_notes'),
+                'country' => $this->input->post('country'),
+                'gst_number' => $this->input->post('gst_number'),
                 'contract_start_date' => $this->input->post('contract_start_date'),
                 'contract_end_date' => $this->input->post('contract_end_date'),
             );
@@ -64,17 +60,16 @@ class Vendor extends CI_Controller {
     public function edit($id) {
         $data['vendor'] = $this->Vendor_model->get_vendor($id);
 
-        $this->form_validation->set_rules('vendor_name', 'Vendor Name', 'trim|required');
-        $this->form_validation->set_rules('commodity_type', 'Commodity Type', 'trim|required');
-         $this->form_validation->set_rules('units', 'units', 'trim|required');
+         $this->form_validation->set_rules('vendor_name', 'Vendor Name', 'trim|required');
         $this->form_validation->set_rules('contact_person', 'Contact Person', 'trim|required');
-        $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required');
+        $this->form_validation->set_rules('contact_number', 'Contact Number', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('address', 'Address', 'trim|required');
         $this->form_validation->set_rules('city', 'City', 'trim|required');
         $this->form_validation->set_rules('state', 'State', 'trim|required');
         $this->form_validation->set_rules('zip_code', 'Zip Code', 'trim|required');
-          $this->form_validation->set_rules('country', 'country', 'trim|required');
+        $this->form_validation->set_rules('country', 'Country', 'trim|required');
+        $this->form_validation->set_rules('gst_number', 'GST Number', 'trim|required');
         $this->form_validation->set_rules('contract_start_date', 'Contract Start Date', 'trim|required');
         $this->form_validation->set_rules('contract_end_date', 'Contract End Date', 'trim|required');
 
@@ -83,19 +78,16 @@ class Vendor extends CI_Controller {
             $this->load->view('vendor/edit', $data);
         } else {
             $update_data = array(
-                'project_id' => $this->input->post('project_id'),
-                'vendor_name' => $this->input->post('vendor_name'),
-                'commodity_type' => $this->input->post('commodity_type'),
-                'units' => $this->input->post('units'),
+                 'vendor_name' => $this->input->post('vendor_name'),
+                'contact_person' => $this->input->post('contact_person'),
+                'contact_number' => $this->input->post('contact_number'),
+                'email' => $this->input->post('email'),
                 'address' => $this->input->post('address'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
                 'zip_code' => $this->input->post('zip_code'),
-                 'country' => $this->input->post('country'),
-                'contact_person' => $this->input->post('contact_person'),
-                'phone_number' => $this->input->post('phone_number'),
-                'email' => $this->input->post('email'),
-                'vendor_notes' => $this->input->post('vendor_notes'),
+                'country' => $this->input->post('country'),
+                'gst_number' => $this->input->post('gst_number'),
                 'contract_start_date' => $this->input->post('contract_start_date'),
                 'contract_end_date' => $this->input->post('contract_end_date'),
             );
@@ -104,17 +96,16 @@ class Vendor extends CI_Controller {
         }
     }
      public function update($id) {
-        $this->form_validation->set_rules('vendor_name', 'Vendor Name', 'trim|required');
-        $this->form_validation->set_rules('commodity_type', 'Commodity Type', 'trim|required');
-         $this->form_validation->set_rules('units', 'units', 'trim|required');
+         $this->form_validation->set_rules('vendor_name', 'Vendor Name', 'trim|required');
         $this->form_validation->set_rules('contact_person', 'Contact Person', 'trim|required');
-        $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required');
+        $this->form_validation->set_rules('contact_number', 'Contact Number', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('address', 'Address', 'trim|required');
         $this->form_validation->set_rules('city', 'City', 'trim|required');
         $this->form_validation->set_rules('state', 'State', 'trim|required');
         $this->form_validation->set_rules('zip_code', 'Zip Code', 'trim|required');
-          $this->form_validation->set_rules('country', 'country', 'trim|required');
+        $this->form_validation->set_rules('country', 'Country', 'trim|required');
+        $this->form_validation->set_rules('gst_number', 'GST Number', 'trim|required');
         $this->form_validation->set_rules('contract_start_date', 'Contract Start Date', 'trim|required');
         $this->form_validation->set_rules('contract_end_date', 'Contract End Date', 'trim|required');
        
@@ -124,19 +115,16 @@ class Vendor extends CI_Controller {
             $this->load->view('vendor/edit', $data);
         } else {
             $update_data = array(
-                'project_id' => $this->input->post('project_id'),
-                'vendor_name' => $this->input->post('vendor_name'),
-                'commodity_type' => $this->input->post('commodity_type'),
-                'units' => $this->input->post('units'),
+                 'vendor_name' => $this->input->post('vendor_name'),
+                'contact_person' => $this->input->post('contact_person'),
+                'contact_number' => $this->input->post('contact_number'),
+                'email' => $this->input->post('email'),
                 'address' => $this->input->post('address'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
                 'zip_code' => $this->input->post('zip_code'),
-                 'country' => $this->input->post('country'),
-                'contact_person' => $this->input->post('contact_person'),
-                'phone_number' => $this->input->post('phone_number'),
-                'email' => $this->input->post('email'),
-                'vendor_notes' => $this->input->post('vendor_notes'),
+                'country' => $this->input->post('country'),
+                'gst_number' => $this->input->post('gst_number'),
                 'contract_start_date' => $this->input->post('contract_start_date'),
                 'contract_end_date' => $this->input->post('contract_end_date'),
             );
