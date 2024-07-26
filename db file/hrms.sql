@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2024 at 01:41 PM
+-- Generation Time: Jul 26, 2024 at 06:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -182,6 +182,76 @@ INSERT INTO `tbl_employee` (`id`, `first_name`, `last_name`, `email`, `password`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_invoices`
+--
+
+CREATE TABLE `tbl_invoices` (
+  `invoice_id` int(11) NOT NULL,
+  `po_id` int(11) NOT NULL,
+  `invoice_number` varchar(50) NOT NULL,
+  `invoice_date` date DEFAULT NULL,
+  `total_amount` double DEFAULT NULL,
+  `status` varchar(50) DEFAULT 'active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_invoices`
+--
+
+INSERT INTO `tbl_invoices` (`invoice_id`, `po_id`, `invoice_number`, `invoice_date`, `total_amount`, `status`) VALUES
+(1, 1, '45855455545', '2024-07-24', 20000, 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_invoice_payments`
+--
+
+CREATE TABLE `tbl_invoice_payments` (
+  `payment_id` int(11) NOT NULL,
+  `invoice_id` int(11) NOT NULL,
+  `payment_date` date DEFAULT NULL,
+  `payment_amount` double DEFAULT NULL,
+  `payment_method` varchar(50) DEFAULT NULL,
+  `remaining_balance` double DEFAULT NULL,
+  `status` varchar(50) NOT NULL DEFAULT 'active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_invoice_payments`
+--
+
+INSERT INTO `tbl_invoice_payments` (`payment_id`, `invoice_id`, `payment_date`, `payment_amount`, `payment_method`, `remaining_balance`, `status`) VALUES
+(1, 1, '2024-07-16', 20000, 'Cash', 201504, 'active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_po_items`
+--
+
+CREATE TABLE `tbl_po_items` (
+  `po_item_id` int(11) NOT NULL,
+  `po_id` int(11) NOT NULL,
+  `item_name` varchar(255) DEFAULT NULL,
+  `item_type` varchar(50) DEFAULT NULL,
+  `item_description` text DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `unit_price` double DEFAULT NULL,
+  `total_price` double DEFAULT NULL,
+  `status` varchar(50) NOT NULL DEFAULT 'active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_po_items`
+--
+
+INSERT INTO `tbl_po_items` (`po_item_id`, `po_id`, `item_name`, `item_type`, `item_description`, `quantity`, `unit_price`, `total_price`, `status`) VALUES
+(1, 1, 'cement', 'mixture', 'cement', 13, 500, 6500, 'active');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_project`
 --
 
@@ -201,6 +271,30 @@ CREATE TABLE `tbl_project` (
   `parking_spot` varchar(255) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_purchase_orders`
+--
+
+CREATE TABLE `tbl_purchase_orders` (
+  `po_id` int(11) NOT NULL,
+  `vendor_id` int(11) NOT NULL,
+  `po_number` varchar(50) NOT NULL,
+  `po_date` date DEFAULT NULL,
+  `expected_delivery_date` date DEFAULT NULL,
+  `total_amount` double DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_purchase_orders`
+--
+
+INSERT INTO `tbl_purchase_orders` (`po_id`, `vendor_id`, `po_number`, `po_date`, `expected_delivery_date`, `total_amount`, `status`) VALUES
+(1, 1, '11', '2024-07-25', '2024-07-27', 10000, NULL),
+(2, 1, '11', '2024-07-25', '2024-07-27', 10000, NULL);
 
 -- --------------------------------------------------------
 
@@ -241,6 +335,36 @@ INSERT INTO `tbl_users` (`id`, `name`, `mobile`, `password`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_vendors`
+--
+
+CREATE TABLE `tbl_vendors` (
+  `id` int(11) NOT NULL,
+  `vendor_name` varchar(50) NOT NULL,
+  `contact_person` varchar(255) DEFAULT NULL,
+  `contact_number` varchar(20) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `zip_code` varchar(20) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `gst_number` varchar(50) DEFAULT NULL,
+  `contract_start_date` date DEFAULT NULL,
+  `contract_end_date` date DEFAULT NULL,
+  `status` varchar(50) DEFAULT 'active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_vendors`
+--
+
+INSERT INTO `tbl_vendors` (`id`, `vendor_name`, `contact_person`, `contact_number`, `email`, `address`, `city`, `state`, `zip_code`, `country`, `gst_number`, `contract_start_date`, `contract_end_date`, `status`) VALUES
+(1, 'venkateswarlu', 'rachuru venkateswarlu', '09550262808', 'datasai006@gmail.com', 'ramalayam', 'kurnool', 'Andhra Pradesh', '518411', 'India', 'gst000123', '2024-07-16', '2024-07-19', 'active');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vendor`
 --
 
@@ -250,6 +374,8 @@ CREATE TABLE `vendor` (
   `vendor_name` varchar(255) DEFAULT NULL,
   `commodity_type` varchar(100) DEFAULT NULL,
   `units` varchar(50) DEFAULT NULL,
+  `credit_limit` varchar(255) DEFAULT NULL,
+  `credit_cycle` varchar(255) DEFAULT NULL,
   `address` text DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
@@ -258,6 +384,10 @@ CREATE TABLE `vendor` (
   `contact_person` varchar(100) DEFAULT NULL,
   `phone_number` varchar(20) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
+  `gst_number` varchar(255) DEFAULT NULL,
+  `pan_number` varchar(255) DEFAULT NULL,
+  `bank_number` varchar(255) DEFAULT NULL,
+  `ifsc_code` varchar(255) DEFAULT NULL,
   `vendor_notes` text DEFAULT NULL,
   `contract_start_date` date DEFAULT NULL,
   `contract_end_date` date DEFAULT NULL,
@@ -269,8 +399,9 @@ CREATE TABLE `vendor` (
 -- Dumping data for table `vendor`
 --
 
-INSERT INTO `vendor` (`vendor_id`, `project_id`, `vendor_name`, `commodity_type`, `units`, `address`, `city`, `state`, `zip_code`, `country`, `contact_person`, `phone_number`, `email`, `vendor_notes`, `contract_start_date`, `contract_end_date`, `status`, `created_at`) VALUES
-(1, NULL, 'venkateswarlu', 'Electrical Equipment', 'tons', 'ramalayam', 'hyderbad', 'Andhra Pradesh', '518002', 'india', 'rachuru venkateswarlu', '9550262808', 'datasai006@gmail.com', NULL, '2024-07-01', '2024-07-17', 'active', '2024-07-02 06:06:09');
+INSERT INTO `vendor` (`vendor_id`, `project_id`, `vendor_name`, `commodity_type`, `units`, `credit_limit`, `credit_cycle`, `address`, `city`, `state`, `zip_code`, `country`, `contact_person`, `phone_number`, `email`, `gst_number`, `pan_number`, `bank_number`, `ifsc_code`, `vendor_notes`, `contract_start_date`, `contract_end_date`, `status`, `created_at`) VALUES
+(1, NULL, 'venkateswarlu', 'Electrical Equipment', 'tons', NULL, NULL, 'ramalayam', 'hyderbad', 'Andhra Pradesh', '518002', 'india', 'rachuru venkateswarlu', '9550262808', 'datasai006@gmail.com', NULL, NULL, NULL, NULL, NULL, '2024-07-01', '2024-07-17', 'active', '2024-07-02 06:06:09'),
+(2, NULL, 'venkateswarlu', 'Bricks', 'kg', '15', '15', '24521532', 'vgcgchbn', 'vhfvcgvjnjnjn', 'n54152', '623556', '56gbvbv', 'b555222', '525253@gmail.com', 'gst000123', 'bwupv445s', '12365478952', 'kkbk0001234', NULL, '2024-07-08', '2024-07-17', 'inactive', '2024-07-25 10:37:54');
 
 -- --------------------------------------------------------
 
@@ -281,7 +412,8 @@ INSERT INTO `vendor` (`vendor_id`, `project_id`, `vendor_name`, `commodity_type`
 CREATE TABLE `villas` (
   `id` int(11) NOT NULL,
   `plot_number` varchar(255) NOT NULL,
-  `area_size` varchar(255) NOT NULL,
+  `plot_size` varchar(255) NOT NULL,
+  `area` varchar(255) NOT NULL,
   `facing` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL,
   `east_position` varchar(255) NOT NULL,
@@ -294,8 +426,10 @@ CREATE TABLE `villas` (
 -- Dumping data for table `villas`
 --
 
-INSERT INTO `villas` (`id`, `plot_number`, `area_size`, `facing`, `status`, `east_position`, `west_position`, `north_position`, `south_position`) VALUES
-(1, '1', '30*40', 'east', 'active', 'road', 'plot', 'plot', 'plot');
+INSERT INTO `villas` (`id`, `plot_number`, `plot_size`, `area`, `facing`, `status`, `east_position`, `west_position`, `north_position`, `south_position`) VALUES
+(1, '1', '30*40', '2000', 'east', 'Sold', 'road', 'plot', 'plot', 'plot'),
+(2, '2', '20*40', '2000', 'east', 'available', 'road', 'plot', 'plot', 'plot'),
+(3, '3', '20*40', '2000', 'west', 'Booked', 'road', 'plot', 'plot', 'road');
 
 --
 -- Indexes for dumped tables
@@ -343,11 +477,39 @@ ALTER TABLE `tbl_employee`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_invoices`
+--
+ALTER TABLE `tbl_invoices`
+  ADD PRIMARY KEY (`invoice_id`),
+  ADD KEY `po_id` (`po_id`);
+
+--
+-- Indexes for table `tbl_invoice_payments`
+--
+ALTER TABLE `tbl_invoice_payments`
+  ADD PRIMARY KEY (`payment_id`),
+  ADD KEY `invoice_id` (`invoice_id`);
+
+--
+-- Indexes for table `tbl_po_items`
+--
+ALTER TABLE `tbl_po_items`
+  ADD PRIMARY KEY (`po_item_id`),
+  ADD KEY `po_id` (`po_id`);
+
+--
 -- Indexes for table `tbl_project`
 --
 ALTER TABLE `tbl_project`
   ADD PRIMARY KEY (`id`),
   ADD KEY `project_id` (`project_id`);
+
+--
+-- Indexes for table `tbl_purchase_orders`
+--
+ALTER TABLE `tbl_purchase_orders`
+  ADD PRIMARY KEY (`po_id`),
+  ADD KEY `vendor_id` (`vendor_id`);
 
 --
 -- Indexes for table `tbl_specifications`
@@ -360,6 +522,12 @@ ALTER TABLE `tbl_specifications`
 -- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_vendors`
+--
+ALTER TABLE `tbl_vendors`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -416,10 +584,34 @@ ALTER TABLE `tbl_employee`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tbl_invoices`
+--
+ALTER TABLE `tbl_invoices`
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_invoice_payments`
+--
+ALTER TABLE `tbl_invoice_payments`
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_po_items`
+--
+ALTER TABLE `tbl_po_items`
+  MODIFY `po_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_project`
 --
 ALTER TABLE `tbl_project`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_purchase_orders`
+--
+ALTER TABLE `tbl_purchase_orders`
+  MODIFY `po_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_specifications`
@@ -434,16 +626,22 @@ ALTER TABLE `tbl_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tbl_vendors`
+--
+ALTER TABLE `tbl_vendors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `vendor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `vendor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `villas`
 --
 ALTER TABLE `villas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -462,10 +660,34 @@ ALTER TABLE `tbl_amenities`
   ADD CONSTRAINT `tbl_amenities_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`);
 
 --
+-- Constraints for table `tbl_invoices`
+--
+ALTER TABLE `tbl_invoices`
+  ADD CONSTRAINT `tbl_invoices_ibfk_1` FOREIGN KEY (`po_id`) REFERENCES `tbl_purchase_orders` (`po_id`);
+
+--
+-- Constraints for table `tbl_invoice_payments`
+--
+ALTER TABLE `tbl_invoice_payments`
+  ADD CONSTRAINT `tbl_invoice_payments_ibfk_1` FOREIGN KEY (`invoice_id`) REFERENCES `tbl_invoices` (`invoice_id`);
+
+--
+-- Constraints for table `tbl_po_items`
+--
+ALTER TABLE `tbl_po_items`
+  ADD CONSTRAINT `tbl_po_items_ibfk_1` FOREIGN KEY (`po_id`) REFERENCES `tbl_purchase_orders` (`po_id`);
+
+--
 -- Constraints for table `tbl_project`
 --
 ALTER TABLE `tbl_project`
   ADD CONSTRAINT `tbl_project_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`);
+
+--
+-- Constraints for table `tbl_purchase_orders`
+--
+ALTER TABLE `tbl_purchase_orders`
+  ADD CONSTRAINT `tbl_purchase_orders_ibfk_1` FOREIGN KEY (`vendor_id`) REFERENCES `tbl_vendors` (`id`);
 
 --
 -- Constraints for table `tbl_specifications`
