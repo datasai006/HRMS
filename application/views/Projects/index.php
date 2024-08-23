@@ -58,10 +58,10 @@
                                 class="fa fas fa-plus"></a>
 
                             <?php elseif ($project['project_type'] == 'Apartments'): ?>
-                            <a href="<?= base_url('apartments/add/'.$project['project_id']) ?>"
+                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>"
                                 class="fa fas fa-plus"></a>
                             <?php elseif ($project['project_type'] == 'Commercial'): ?>
-                            <a href="<?= base_url('commercial/add/'.$project['project_id']) ?>"
+                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>"
                                 class="fa fas fa-plus"></a>
                             <?php endif; ?>
                         </td>

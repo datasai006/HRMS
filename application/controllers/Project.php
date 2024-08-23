@@ -114,11 +114,11 @@ class Project extends CI_Controller {
         // Sample data for plot types
         $plot_types = [];
         if ($project_type == 'Villas') {
-            $plot_types = ['Villa Type A', 'Villa Type B', 'Villa Type C'];
+            $plot_types = ['Single', 'Duplex', 'Triplex'];
         } elseif ($project_type == 'Apartments') {
-            $plot_types = ['Apartment Type A', 'Apartment Type B'];
+            $plot_types = ['1BHK', '2BHK', '3BHK', '4BHK'];
         } elseif ($project_type == 'Commercial') {
-            $plot_types = ['Commercial Type A', 'Commercial Type B'];
+            $plot_types = ['Shop', 'Office', 'Showroom'];
         }
 
         echo json_encode($plot_types);
