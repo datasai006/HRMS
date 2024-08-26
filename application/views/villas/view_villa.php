@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>View Villa</h1>
+                    <h1>View Plot</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="<?= base_url('Dashboard') ?>">Home</a></li>
-                        <li class="breadcrumb-item"><a href="<?= base_url('villas') ?>">Villas</a></li>
-                        <li class="breadcrumb-item active">View Villa</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('villas') ?>">Plot</a></li>
+                        <li class="breadcrumb-item active">View Plot</li>
                     </ol>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="<?= base_url('villas') ?>" class="btn btn-primary">Back to List</a>
+                            <a href="<?= base_url('Project') ?>" class="btn btn-primary">Back to List</a>
                         </div>
                     </div>
                 </div>

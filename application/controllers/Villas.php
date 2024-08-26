@@ -35,7 +35,7 @@ class Villas extends CI_Controller {
         $this->Villa_model->insert_villa($data);
         
         // Redirect to villas list
-        redirect('villas');
+        redirect('Project');
     } else {
         // Handle GET request: load the form with project data
         $data['projects'] = $this->Project_model->get_all_projects(); // Get all projects for dropdown
