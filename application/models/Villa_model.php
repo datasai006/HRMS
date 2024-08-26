@@ -47,9 +47,21 @@ class Villa_model extends CI_Model {
     $query = $this->db->get();   
     return $query->result();
 }
+        public function is_duplicate_plot($plot_number, $project_id) {
+    $this->db->where('plot_number', $plot_number);
+    $this->db->where('project_id', $project_id);
+    $query = $this->db->get('villas');
+    
+    if ($query->num_rows() > 0) {
+        return true; 
+    } else {
+        return false; 
+        }
 
 
 
 
+
+}
 }
 ?>

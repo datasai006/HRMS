@@ -30,6 +30,11 @@
                         <!-- form start -->
                         <form action="<?= base_url('villas/create') ?>" method="post">
                             <div class="card-body">
+                                <?php if ($this->session->flashdata('errors')): ?>
+                                <div class="alert alert-danger">
+                                    <?= $this->session->flashdata('errors'); ?>
+                                </div>
+                                <?php endif; ?>
                                 <div class="row">
                                     <?php if ($selected_project): ?>
                                     <div class="form-group col-md-4">
@@ -246,6 +251,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+</script>
+<script>
+// Check if there is a project_id in localStorage and set the form's project_id field
+window.onload = function() {
+    const projectId = localStorage.getItem('project_id');
+    if (projectId) {
+        document.querySelector('input[name="project_id"]').value = projectId;
+    }
+};
+
+// Store project_id in localStorage on page load if it's in the URL
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('project_id');
+    if (projectId) {
+        localStorage.setItem('project_id', projectId);
+    }
+})();
 </script>
 
 

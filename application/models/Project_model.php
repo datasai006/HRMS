@@ -53,14 +53,15 @@ class Project_model extends CI_Model {
         $this->db->where('project_id', $project_id);
         return $this->db->update('Projects', array('status' => 'inactive'));
     }
-       
- 
-
-    // Method to get a project by ID
+      // Method to get a project by ID
     public function get_project_by_id($project_id) {
         $query = $this->db->get_where('Projects', array('project_id' => $project_id)); // Replace 'tbl_projects' with your actual table name
         return $query->row(); // Fetch a single row
     }
+       
+ 
+
+  
 
 }
 ?>

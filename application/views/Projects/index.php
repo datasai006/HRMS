@@ -54,15 +54,15 @@
 
                             <!-- Add Button Based on Project Type -->
                             <?php if ($project['project_type'] == 'Villas'): ?>
-                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>"
-                                class="fa fas fa-plus"></a>
+                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>" class="fa fas fa-plus"
+                                onclick="storeProjectId(<?= $project['project_id'] ?>)"></a>
 
                             <?php elseif ($project['project_type'] == 'Apartments'): ?>
-                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>"
-                                class="fa fas fa-plus"></a>
+                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>" class="fa fas fa-plus"
+                                onclick="storeProjectId(<?= $project['project_id'] ?>)"></a>
                             <?php elseif ($project['project_type'] == 'Commercial'): ?>
-                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>"
-                                class="fa fas fa-plus"></a>
+                            <a href="<?= base_url('villas/create/'.$project['project_id']) ?>" class="fa fas fa-plus"
+                                onclick="storeProjectId(<?= $project['project_id'] ?>)"></a>
                             <?php endif; ?>
                         </td>
                     </tr>
@@ -74,3 +74,8 @@
     </section>
 </div>
 <?php $this->load->view('includes/footer') ?>
+<script>
+function storeProjectId(projectId) {
+    localStorage.setItem('project_id', projectId);
+}
+</script>

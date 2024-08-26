@@ -292,4 +292,69 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var projectIdInput = document.getElementById('project_id');
+//     var plotTypeSelect = document.getElementById('plot_type');
+
+//     if (projectIdInput && plotTypeSelect) {
+//         // Function to handle project selection change
+//         function handleProjectChange() {
+//             var selectedOption = projectIdInput.options[projectIdInput.selectedIndex];
+//             var projectType = selectedOption.getAttribute('data-type');
+//             var projectId = selectedOption.value;
+
+//             console.log('Selected Project ID:', projectId);
+//             console.log('Selected Project Type:', projectType);
+
+//             if (projectType) {
+//                 var xhr = new XMLHttpRequest();
+//                 xhr.open('POST', '<?= base_url('project/get_plot_typess') ?>', true);
+//                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+//                 xhr.onload = function() {
+//                     if (xhr.status === 200) {
+//                         var plotTypes = JSON.parse(xhr.responseText);
+
+//                         // Clear existing options
+//                         plotTypeSelect.innerHTML = '<option value="">Select Plot Type</option>';
+
+//                         if (plotTypes.length > 0) {
+//                             // Populate plot types from the server
+//                             plotTypes.forEach(function(type) {
+//                                 var option = document.createElement('option');
+//                                 option.value = type.toLowerCase().replace(/ /g, '_');
+//                                 option.textContent = type;
+//                                 plotTypeSelect.appendChild(option);
+//                             });
+//                         } else {
+//                             // Handle case where no plot types are returned
+//                             var option = document.createElement('option');
+//                             option.value = '';
+//                             option.textContent = 'No Plot Types Available';
+//                             plotTypeSelect.appendChild(option);
+//                         }
+//                     } else {
+//                         console.error('Failed to fetch plot types:', xhr.statusText);
+//                     }
+//                 };
+//                 xhr.onerror = function() {
+//                     console.error('Request failed');
+//                 };
+//                 xhr.send('project_id=' + encodeURIComponent(projectId) + '&project_type=' + encodeURIComponent(
+//                     projectType));
+//             } else {
+//                 // Handle case where project type is not available
+//                 plotTypeSelect.innerHTML = '<option value="">Select Plot Type</option>';
+//             }
+//         }
+
+//         // Attach change event listener to the project_id select element
+//         projectIdInput.addEventListener('change', handleProjectChange);
+
+//         // Trigger the event handler if project_id has a value on page load
+//         if (projectIdInput.value) {
+//             handleProjectChange();
+//         }
+//     }
+// });
 </script>
